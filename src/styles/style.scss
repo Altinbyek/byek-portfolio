@@ -1,16 +1,17 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "./font.scss";
 
 :root {
   //   --background: #ffffff;
-  --background: #212529;
+  --background: #130428;
   --foreground: #f7f7f7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #130428;
     --foreground: #ededed;
   }
 }
@@ -18,11 +19,31 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "PressStar";
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.main-container {
+  width: 1000px !important;
+}
+
+.soft-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.medium-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.strong-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.top-40 {
+  margin-top: 40px;
 }

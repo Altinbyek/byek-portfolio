@@ -1,49 +1,25 @@
 "use client";
-import React, { useState } from "react";
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from "../components/ui/navbar-menu";
-import { cn } from "@/lib/utils";
-import EAYG from "../../public/assets/header/eayg.jpg";
+import React from "react";
+import styles from "./header.module.scss";
+import Logo from "./Logo";
+import Menu from "./menu";
+import { motion } from "framer-motion";
 
-export function Header({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
+export function Header() {
   return (
-    <div
-      className={cn("fixed top-10 inset-x-0 max-w-2xl mx-auto z-50", className)}
-    >
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Миний тухай">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/profession">Мэргэжил</HoveredLink>
-            <HoveredLink href="/school">Сургууль</HoveredLink>
-            <HoveredLink href="/internship">Дадлага</HoveredLink>
-            <HoveredLink href="/work-experience">Ажлын туршлага</HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Бүтээл">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Ulaanbaatar2023 EAYG"
-              href="https://ulaanbaatar2023.org/"
-              src={EAYG}
-              description="Prepare for tech interviews like never before."
-              blank="_blank"
-            />
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Холбоо барих">
-          {/* <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div> */}
-        </MenuItem>
-      </Menu>
+    <div className={`${styles.body}`}>
+      <div className="main-container flex items-center h-full justify-center">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+          className={`${styles.menu} flex items-center justify-between w-full strong-shadow`}
+        >
+          <Logo />
+          <Menu />
+        </motion.div>
+      </div>
     </div>
   );
 }

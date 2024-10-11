@@ -1,0 +1,31 @@
+.body {
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  // height: 60vh;
+}
+
+.avatar {
+  position: relative;
+  // top: 130px;
+  // left: 60px;
+  top: 110px;
+  left: 10px;
+}
+
+.avatarImg {
+  position: absolute;
+  left: 50%;
+  // top: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%);
+}
+
+.avatarGradient {
+  position: absolute;
+}
+
+.arrow {
+  position: relative;
+  bottom: 60px;
+}
