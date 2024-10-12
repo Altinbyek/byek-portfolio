@@ -45,7 +45,7 @@ function WorkExperience() {
                 target="__blank"
                 className="rounded-xl text-xs text-white"
               >
-                Үсрэх →
+                Зочлох →
               </CardItem>
             </div>
           </CardBody>
